@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="competitive programming" />
+    <meta name="description" content="Some tips and tricks for doing competitive programming" />
+    <title>Tips and Tricks</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .emoji img { width: 25px; }
+      .bojack img { width: 550px; }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .green { color: #00aa00; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# Competitive Programming
+## Tips and Tricks
+#### from Donald Dong
+#### May 24, 2019
+##### [GitHub](https://github.com/donaldong/competitive-programming)
+
+---
+.left-column[
+## Know two programming languages
+]
+.right-column[
+The programming languages of the [ICPC World
+Finals](https://icpc.baylor.edu/regionals/rules) are
+- Java
+- Kotlin
+- Python
+- C/C++
+
+Learn Python, and one of the other languages!
+
+C++ is .red[the most popular] programming language for competitive programming
+today.
+
+### Language features in C++17
+- Big integer: No
+- Binary search: Yes
+- Easy to debug: it depends 
+- Fast factorial: No
+- Fast string matching: Yes
+- Fast: Yes
+- Permutations: Yes
+- Regex: Yes
+- Self-balancing binary search tree: Yes
+- Short to code: Yes
+]
+
+---
+.left-column[
+## Know two programming languages
+## Choose your editors/IDEs
+]
+.right-column[
+According to the [2019 ICPC World Finals Programming
+Environment](https://icpc.baylor.edu/worldfinals/programming-environment), we
+may use following editors:
+- vi/vim/gvim, emacs, gedit, geany, kate
+
+and IDEs:
+- Eclipse, IntelliJ, CLion, Pycharm, Code::Blocks
+
+### Hmm, me?  vim + tmux!
+- `.vimrc` and `.tmux.conf` allow you to take your favorite settings with you
+everywhere, and be productive
+- Basic Vim commands help you write and fix you code faster
+  - Define your own short cuts
+  - Fast: No mouse interaction
+  - Go to a line
+  - Lower case to upper case
+  - Quick navigation: search, replace, and highlight
+  - Easy to get started? No, but it will pay off eventually
+]
+
+---
+.left-column[
+## Know two programming languages
+## Choose your editors/IDEs
+## Team work
+]
+.right-column[
+The Rule: .red[3 people, 1 computer]
+
+Know your teammates. Be friends!
+
+#### Easy Problems First
+- What's the next easiest problem we haven't solved?
+- Not sure? Check the scoreboard!
+
+#### Maximize the time off the computer
+- Have a solution sketch on paper before code it
+- Provide an estimatition: how long will it take to code
+
+#### Oh no, the solution doesn't work!
+- Did you read the problem, again?
+- Print your solution and debug on paper
+  - Prove the correctness of your algorithm
+  - Add debug statements and print the log
+  - Generate new test cases (more details later)
+- Hey friends, do you mind to take a look?
+- Well, at least I tried? Next problem : Keep debugging
+]
+
+---
+.left-column[
+# Testing
+## Verdicts
+]
+.right-column[
+.green[Accepted (AC)] .emoji[![](https://cultofthepartyparrot.com/parrots/hd/partyparrot.gif)] AYYY!
+High five! .emoji[![](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/56/balloon_1f388.png)]
+
+##### .red[Wrong Answer (WA)]
+- Is the approach correct in all cases?
+- Could it be a floating point precision error?
+- Could it be a formatting error?
+- Could it be an integer overflow?
+
+##### .red[Time Limit Exceeded (TLE)]
+- How slow can this approach be, in the worst case?
+- Could it have an infinite loop?
+
+##### .red[Memory Limit Exceeded (MLE)]
+- How many states are we storing, in the worst case?
+- Too many recursive calls?
+
+##### .red[Runtime Error (RE)]
+- Index out of bound? Dereferencing null pointers? Dividing by zeros?
+]
+
+---
+.left-column[
+# Testing
+## Verdicts
+## Generating test cases
+]
+.right-column[
+#### Is your program doing what you .red[intend] to do?
+#### What could be an edge case?
+- Empty? Duplicates? Big input? Disconnected?
+- A different objective: Break your own code this time
+
+#### Write code to generate test cases
+- Create a big input
+- Randomized testing
+
+```python
+def invert(brackets, i, inv_range):
+  if i in inv_range:
+    return '(' if brackets[i] == ')' else ')'
+  return brackets[i]
+
+N = 2500
+brackets = '(' * N + ')' * N
+idx_start = randint(0, N)
+idx_end = idx_start + randint(0, N)
+inv_range = range(idx_start, idx_end + 1)
+print(''.join([
+  invert(brackets, i, inv_range)
+  for i in range(len(brackets))
+]))
+```
+]
+
+---
+.left-column[
+# Testing
+## Verdicts
+## Generating test cases
+### Automation
+]
+.right-column[
+#### I/O Redirection
+```bash
+python3 input.py > 001_big_input.in
+python3 solution.py < 001_big_input.in > 001_big_input.out
+```
+
+#### Use the slow solution as a judge
+```bash
+python3 tle.py < 002_random.in > 002_random.ans
+python3 wa.py < 002_random.in > 002_random.out
+diff 002_random.out 002_random.ans
+```
+
+#### Randomized Search
+```bash
+for i in {1..10}; do
+  ruby input.rb > ${i}_random.in && \
+  ./tle.out < ${i}_random.in > ${i}_random.ans && \
+  ./wa.out < ${i}_random.in > ${i}_random.out && \
+  echo "test case $i:" && \
+  diff ${i}_random.out ${i}_random.ans
+done
+```
+]
+
+---
+.left-column[
+  ## Problem Solving
+]
+
+.right-column[
+### Four Categories
+- I have solved this type of problems
+- I have seen this type
+  - I know how to solve them
+  - I don't know how to solve them
+- I have not seen this type
+
+### Techniques
+- Reduce the new problems to a known problem
+- Detect properties unique to the new problems
+- Modeling the problem differently
+
+### Algorithm Analysis
+Assume the CPU can compute 100M operations in 3 sec
+- `O(n!)`: n <= 11
+- `O(2^n)`: n <= 23
+- `O(n^2)`: n <= 10k
+]
+
+---
+.left-column[
+# Tricks
+## Python
+]
+.right-column[
+```python
+x, y = [1, 2]       # Unpack
+x, y = y, x         # Swap
+[1, 2] * 3 + [4, 5] # Operators on lists
+
+# List Comprehension
+x = [chr(ord('A') + i % 26) for i in range(100)]
+y = ','.join(x)     # str.join
+y[-1]               # The last character
+y[:-1]              # Exclude the last character
+y[::-1]             # Reverse y
+reversed(y)         # What's the differences?
+
+# Range Comparison
+3 in range(0, 5)
+0 <= 3 < 5
+```
+
+```python
+from math import factorial as f
+f(10)
+
+from fractions import Fraction
+Fraction(1, 2) + Fraction(3, 4)
+
+from itertools import permutations
+list(permutations([3, 2, 1]))
+
+from collections import Counter
+Counter([1, 1, 2, 5, 6])
+```
+]
+
+---
+.left-column[
+# Tricks
+## Python
+## C++
+### Less typing
+]
+
+.right-column[
+### Oops, forgot to include that!
+The ["fix"](https://www.geeksforgeeks.org/bitsstdc-h-c/)
+```cpp
+#include <bits/stdc++.h>
+```
+
+### Range-based for-loop
+```cpp
+int nums[] = {1, 2, 3};
+for (int num : nums) cout << num << endl;
+```
+
+### The `auto` keyword
+```cpp
+unordered_map<int, map<int, set<int>>> complex_ds;
+for (auto &item : complex_ds) {
+  // Bad
+  item.second[1].erase(
+    item.second[1].find(1)
+  );
+  // Better
+  auto &s = item.second[1];
+  s.erase(s.find(1));
+}
+```
+]
+
+---
+.left-column[
+# Tricks
+## Python
+## C++
+### Less typing
+### References, Iterators and Pointers
+]
+
+.right-column[
+### Use references!
+```cpp
+vector<int> nums(5);
+for (int &num : nums) cin >> num;
+
+void func(vector<int> &vec) { ... }
+```
+
+### Use iterators!
+```cpp
+for (auto itr = container.rbegin();
+          itr != container.rend();
+          ++itr) { cout << *itr << endl; }
+```
+
+### Use pointers when you have to
+```cpp
+// Bad
+vector<node*> nodes(5);
+for (int i = 0; i < 5; ++i) nodes[i] = new node;
+
+// Better
+vector<node> nodes(5);
+```
+]
+
+---
+.left-column[
+# Tricks
+## Python
+## C++
+### Less typing
+### References, Iterators and Pointers
+### STL
+]
+
+.right-column[
+### The Standard Template Library [STL](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)
+#### Do binary search using a self-balancing BST
+```cpp
+multimap<int, string> costs;
+auto start = costs.lower_bound(5);
+auto end = costs.lower_bound(10);
+for (auto i = start; i != end; ++i) {
+  // i: an item with a cost in the interval [5, 9]
+}
+```
+#### Implement greedy algorithms using a heap
+```cpp
+int d, r, c;
+// tuple: (distance, row_index, col_index)
+typedef tuple<int, int, int> tup;
+// A priority_queue for algorithms such as Dijkstra's
+priority_queue<tup, vector<tup>, greater<tup>> pq;
+while (!pq.empty()) {
+  tie(d, r, c) = pq.top(), pq.pop();
+  // process the next state ...
+}
+```
+]
+
+---
+.left-column[
+# Tricks
+## Python
+## C++
+### Less typing
+### References, Iterators and Pointers
+### STL
+]
+
+.right-column[
+# Practice!
+- The ultimate trick
+
+.bojack[![](https://media1.tenor.com/images/9e1c644cdaafe0d4b47f1607bff5d942/tenor.gif?itemid=12533952)]
+
+*Everyday it gets a little easier, but you gotta do it everyday.*
+]
+
+---
+# References 
+Halim, S., & Halim, F. (2013). Competitive Programming 3: The new lower bound of programming contests. Singapore: Lulu.com.
+.footnote[[pdfs](https://github.com/vedic-partap/Codes/tree/master/books)]
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLines: true
+      }) ;
+    </script>
+  </body>
+</html>
